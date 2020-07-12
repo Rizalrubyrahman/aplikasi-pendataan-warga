@@ -16,3 +16,6 @@ Route::get('/','DashboardController@index');
 
 //agama
 Route::resource('agama', 'AgamaController');
+
+//dokumen
+Route::resource('dokumen','DokumenController');

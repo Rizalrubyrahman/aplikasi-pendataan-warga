@@ -19,7 +19,7 @@
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <a class="collapse-item" href="/agama">Agama</a>
-          <a class="collapse-item" href="">Dokumen</a>
+          <a class="collapse-item" href="/dokumen">Dokumen</a>
           <a class="collapse-item" href="">Klasifikasi Penduduk</a>
         </div>
       </div>
