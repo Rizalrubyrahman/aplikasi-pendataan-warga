@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Dokumen;
 use Illuminate\Http\Request;
+use App\Http\Requests\FormDokumenRequest;
 
 class DokumenController extends Controller
 {
@@ -33,7 +34,7 @@ class DokumenController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormDokumenRequest $request)
     {
         Dokumen::create([
             'nama_dokumen' => $request->nama_dokumen,
@@ -73,7 +74,7 @@ class DokumenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormDokumenRequest $request, $id)
     {
         $dokumen = Dokumen::find($id);
         $dokumen->update([
