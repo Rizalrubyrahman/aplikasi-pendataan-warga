@@ -19,3 +19,6 @@ Route::resource('agama', 'AgamaController');
 
 //dokumen
 Route::resource('dokumen','DokumenController');
+
+//klasifikasi
+Route::resource('klasifikasi', 'KlasifikasiController');

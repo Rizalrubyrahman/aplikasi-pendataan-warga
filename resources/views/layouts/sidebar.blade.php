@@ -20,7 +20,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <a class="collapse-item" href="/agama">Agama</a>
           <a class="collapse-item" href="/dokumen">Dokumen</a>
-          <a class="collapse-item" href="">Klasifikasi Penduduk</a>
+          <a class="collapse-item" href="/klasifikasi">Klasifikasi Penduduk</a>
         </div>
       </div>
     </li>
