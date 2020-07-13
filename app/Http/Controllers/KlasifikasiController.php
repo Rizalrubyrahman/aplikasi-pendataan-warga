@@ -39,7 +39,7 @@ class KlasifikasiController extends Controller
             'klasifikasi' => $request->klasifikasi,
             'status' => 1,
         ]);
-        alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
+        alert()->success('Berhasil','Data Telah Ditambahkan');
         return redirect('/klasifikasi');
     }
 
@@ -62,7 +62,7 @@ class KlasifikasiController extends Controller
      */
     public function edit($id)
     {
-        $klasifikasi = Klasifikasi::find($id);
+        $klasifikasi = Klasifikasi::find($id);    
         return view('klasifikasi.ubah',compact('klasifikasi'));
     }
 
@@ -80,6 +80,7 @@ class KlasifikasiController extends Controller
             'klasifikasi' => $request->klasifikasi,
             'status' => 1,
         ]);
+        alert()->success('Berhasil','Data Telah Diubah');
         return redirect('/klasifikasi');
     }
 
@@ -93,6 +94,7 @@ class KlasifikasiController extends Controller
     {
         $klasifikasi = Klasifikasi::find($id);
         $klasifikasi->delete();
+        alert()->success('Berhasil','Data Telah Dihapus');
         return redirect('/klasifikasi');
     }
 }

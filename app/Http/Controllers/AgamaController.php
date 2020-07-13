@@ -39,6 +39,7 @@ class AgamaController extends Controller
             'nama_agama' => $request->nama_agama,
             'status' => 1,
         ]);
+        alert()->success('Berhasil','Data Telah Ditambahkan');
         return redirect('/agama');
     }
 
@@ -79,6 +80,7 @@ class AgamaController extends Controller
             'nama_agama' => $request->nama_agama,
             'status' => 1,
         ]);
+        alert()->success('Berhasil','Data Telah Diubah');
         return redirect('/agama');
     }
 
@@ -92,6 +94,7 @@ class AgamaController extends Controller
     {
         $agama = Agama::find($id);
         $agama->delete();
+        alert()->success('Berhasil','Data Telah Dihapus');
         return redirect('/agama');
     }
 }

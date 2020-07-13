@@ -39,6 +39,7 @@ class DokumenController extends Controller
             'nama_dokumen' => $request->nama_dokumen,
             'status' => 1,
         ]);
+        alert()->success('Berhasil','Data Telah Ditambahkan');
         return redirect('/dokumen');
     }
 
@@ -79,6 +80,7 @@ class DokumenController extends Controller
             'nama_dokumen' => $request->nama_dokumen,
             'status' => 1,
         ]);
+        alert()->success('Berhasil','Data Telah Diubah');
         return redirect('/dokumen');
     }
 
@@ -92,6 +94,7 @@ class DokumenController extends Controller
     {
         $dokumen = Dokumen::find($id);
         $dokumen->delete();
+        alert()->success('Berhasil','Data Telah Dihapus');
         return redirect('/dokumen');
     }
 }
