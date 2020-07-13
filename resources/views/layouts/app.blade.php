@@ -28,6 +28,7 @@
 		@include('layouts.sidebar')
 		@include('layouts.navbar')
 		<div class="container-fluid">
+			@include('sweetalert::alert')
 			@yield('content')
 		</div>
 		

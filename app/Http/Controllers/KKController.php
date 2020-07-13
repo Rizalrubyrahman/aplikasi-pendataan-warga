@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Klasifikasi;
+
 use Illuminate\Http\Request;
 
-class KlasifikasiController extends Controller
+class KKController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,7 @@ class KlasifikasiController extends Controller
      */
     public function index()
     {
-        $data_klasifikasi = Klasifikasi::all();
-        return view('klasifikasi.index',compact('data_klasifikasi'));
+        //
     }
 
     /**
@@ -35,12 +34,7 @@ class KlasifikasiController extends Controller
      */
     public function store(Request $request)
     {
-        $klasifikasi = Klasifikasi::create([
-            'klasifikasi' => $request->klasifikasi,
-            'status' => 1,
-        ]);
-        alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
-        return redirect('/klasifikasi');
+        //
     }
 
     /**
@@ -62,8 +56,7 @@ class KlasifikasiController extends Controller
      */
     public function edit($id)
     {
-        $klasifikasi = Klasifikasi::find($id);
-        return view('klasifikasi.ubah',compact('klasifikasi'));
+        //
     }
 
     /**
@@ -75,12 +68,7 @@ class KlasifikasiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $klasifikasi = Klasifikasi::find($id);
-        $klasifikasi->update([
-            'klasifikasi' => $request->klasifikasi,
-            'status' => 1,
-        ]);
-        return redirect('/klasifikasi');
+        //
     }
 
     /**
@@ -91,8 +79,6 @@ class KlasifikasiController extends Controller
      */
     public function destroy($id)
     {
-        $klasifikasi = Klasifikasi::find($id);
-        $klasifikasi->delete();
-        return redirect('/klasifikasi');
+        //
     }
 }
