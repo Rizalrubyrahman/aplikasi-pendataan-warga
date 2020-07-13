@@ -16,6 +16,7 @@
                 <tr>
                     <th>No</th>
                     <th>Nama Agama</th>
+                    <th class="text-center">Jumlah</th>
                     <th class="text-center">status</th>
                     <th class="text-center">Opsi</th>
                 </tr>
@@ -28,6 +29,7 @@
                     <tr>
                         <td>{{$no++}}</td>
                         <td>{{$agama->nama_agama}}</td>
+                        <td class="text-center"><span class="badge badge-warning">{{$agama->penduduk->where('agama_id',$agama->id)->count()}} Orang</span></td>
                         @if ($agama->status == 1)
                             <td class="text-center"><span class="badge badge-info" style="margin-left: -20px;">Aktif</span></td>
                         @endif

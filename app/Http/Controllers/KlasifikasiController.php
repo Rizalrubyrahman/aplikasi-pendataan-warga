@@ -60,9 +60,8 @@ class KlasifikasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        $klasifikasi = Klasifikasi::find($id);    
+    public function edit(Klasifikasi $klasifikasi)
+    {    
         return view('klasifikasi.ubah',compact('klasifikasi'));
     }
 
@@ -73,9 +72,8 @@ class KlasifikasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(FormKlasifikasiRequest $request, $id)
+    public function update(FormKlasifikasiRequest $request, Klasifikasi $klasifikasi)
     {
-        $klasifikasi = Klasifikasi::find($id);
         $klasifikasi->update([
             'klasifikasi' => $request->klasifikasi,
             'status' => 1,
@@ -90,9 +88,8 @@ class KlasifikasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Klasifikasi $klasifikasi)
     {
-        $klasifikasi = Klasifikasi::find($id);
         $klasifikasi->delete();
         alert()->success('Berhasil','Data Telah Dihapus');
         return redirect('/klasifikasi');

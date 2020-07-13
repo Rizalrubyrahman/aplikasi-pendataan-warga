@@ -22,3 +22,6 @@ Route::resource('dokumen','DokumenController');
 
 //klasifikasi
 Route::resource('klasifikasi', 'KlasifikasiController');
+
+//kk
+Route::resource('kartu-keluarga', 'KKController');

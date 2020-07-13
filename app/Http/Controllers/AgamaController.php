@@ -61,9 +61,8 @@ class AgamaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Agama $agama)
     {
-        $agama = Agama::find($id);
         return view('agama.ubah',compact('agama'));
     }
 
@@ -74,9 +73,8 @@ class AgamaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(FormAgamarequest $request, $id)
+    public function update(FormAgamarequest $request, Agama $agama)
     {
-        $agama = Agama::find($id);
         $agama->update([
             'nama_agama' => $request->nama_agama,
             'status' => 1,
@@ -91,9 +89,8 @@ class AgamaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $agama = Agama::find($id);
+    public function destroy(Agama $agama)
+    {;
         $agama->delete();
         alert()->success('Berhasil','Data Telah Dihapus');
         return redirect('/agama');

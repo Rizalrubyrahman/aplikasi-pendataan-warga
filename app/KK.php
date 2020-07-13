@@ -9,15 +9,16 @@ class KK extends Model
     protected $fillable = 
     [
         'no_kk',
-        'alamat',
         'rt',
         'rw',
         'desa',
         'kecamatan',
         'kabupaten',
-        'kode_pos',
-        'provinsi',
         'kepala_keluarga',
     ];
     protected $table = 'kk';
+    public function penduduk()
+    {
+        return $this->hasMany(Penduduk::class);
+    }
 }

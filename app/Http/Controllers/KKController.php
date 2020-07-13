@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\KK;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class KKController extends Controller
@@ -13,7 +14,8 @@ class KKController extends Controller
      */
     public function index()
     {
-        //
+        $data_kk = KK::all();
+        return view('kk.index',compact('data_kk'));
     }
 
     /**

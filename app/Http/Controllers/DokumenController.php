@@ -61,9 +61,8 @@ class DokumenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dokumen $dokumen)
     {
-        $dokumen = Dokumen::find($id);
         return view('dokumen.ubah',compact('dokumen'));
     }
 
@@ -74,9 +73,8 @@ class DokumenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(FormDokumenRequest $request, $id)
+    public function update(FormDokumenRequest $request, Dokumen $dokumen)
     {
-        $dokumen = Dokumen::find($id);
         $dokumen->update([
             'nama_dokumen' => $request->nama_dokumen,
             'status' => 1,
@@ -91,9 +89,8 @@ class DokumenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Dokumen $dokumen)
     {
-        $dokumen = Dokumen::find($id);
         $dokumen->delete();
         alert()->success('Berhasil','Data Telah Dihapus');
         return redirect('/dokumen');

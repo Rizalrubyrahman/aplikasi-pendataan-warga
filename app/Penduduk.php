@@ -8,9 +8,9 @@ class Penduduk extends Model
 {
     protected $fillable = 
     [
-        'id_agama',
-        'id_klasifikasi',
-        'id_kk',
+        'agama_id',
+        'klasifikasi_id',
+        'k_k_id',
         'nik',
         'nama',
         'tempat_lahir',
@@ -21,7 +21,18 @@ class Penduduk extends Model
         'pendidikan',
         'status_perkawinan',
         'kewarganegaraan',
-        'foto',
     ];
     protected $table = 'penduduk';
+    public function kk()
+    {
+        return $this->belongsTo(KK::class);
+    }
+    public function agama()
+    {
+        return $this->belongsTo(Agama::class);
+    }
+    public function klasifikasi()
+    {
+        return $this->belongsTo(Klasifikasi::class);
+    }
 }
