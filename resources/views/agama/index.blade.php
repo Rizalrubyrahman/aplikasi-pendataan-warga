@@ -61,7 +61,8 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label>Nama Agama</label>
-                    <input type="text" name="nama_agama" placeholder="Masukan Agama" class="form-control">
+                    <input type="text" name="nama_agama" placeholder="Masukan Agama" class="form-control {{$errors->has('nama_agama') ? 'is-invalid' : ''}}" value="{{old('nama_agama')}}">
+                    {!!$errors->first('nama_agama','<span class="invalid-feedback">:message</span>')!!}
                 </div>
             
         </div>

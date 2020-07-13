@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Agama;
 use Illuminate\Http\Request;
+use App\Http\Requests\FormAgamarequest;
 
 class AgamaController extends Controller
 {
@@ -33,7 +34,7 @@ class AgamaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormAgamarequest $request)
     {
         $agama = Agama::create([
             'nama_agama' => $request->nama_agama,
@@ -73,7 +74,7 @@ class AgamaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormAgamarequest $request, $id)
     {
         $agama = Agama::find($id);
         $agama->update([
