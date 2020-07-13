@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Klasifikasi;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\FormKlasifikasiRequest;
 class KlasifikasiController extends Controller
 {
     /**
@@ -33,7 +33,7 @@ class KlasifikasiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormKlasifikasiRequest $request)
     {
         $klasifikasi = Klasifikasi::create([
             'klasifikasi' => $request->klasifikasi,
@@ -73,7 +73,7 @@ class KlasifikasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormKlasifikasiRequest $request, $id)
     {
         $klasifikasi = Klasifikasi::find($id);
         $klasifikasi->update([

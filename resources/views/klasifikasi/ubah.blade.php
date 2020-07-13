@@ -12,7 +12,8 @@
             <input type="hidden" name="_method" value="put">
             <div class="form-group">
                 <label>Nama Klasifikasi</label>
-                <input type="text" name="klasifikasi" class="form-control" value="{{$klasifikasi->klasifikasi}}">
+                <input type="text" name="klasifikasi" class="form-control {{$errors->has('klasifikasi') ? 'is-invalid' : ''}}" value="{{$klasifikasi->klasifikasi}}">
+                {!!$errors->first('klasifikasi','<span class="invalid-feedback">:message</span>')!!}
             </div>
             <button type="submit" class="btn btn-warning"><i class="fa fa-close"></i>Ubah</button>
         </form>
