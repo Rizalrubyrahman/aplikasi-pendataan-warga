@@ -25,3 +25,6 @@ Route::resource('klasifikasi', 'KlasifikasiController');
 
 //kk
 Route::resource('kartu-keluarga', 'KKController');
+
+//penduduk
+Route::resource('penduduk', 'PendudukController');

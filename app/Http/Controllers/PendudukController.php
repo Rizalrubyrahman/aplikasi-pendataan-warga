@@ -1,13 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\KK;
-use App\Penduduk;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
-use App\Http\Requests\FormKKRequest;
 
-class KKController extends Controller
+use Illuminate\Http\Request;
+
+class PendudukController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +13,7 @@ class KKController extends Controller
      */
     public function index()
     {
-        $data_kk = KK::all();
-        return view('kk.index',compact('data_kk'));
+        //
     }
 
     /**
@@ -27,7 +23,7 @@ class KKController extends Controller
      */
     public function create()
     {
-        return view('kk.tambah');
+        //
     }
 
     /**
@@ -36,11 +32,9 @@ class KKController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(FormKKRequest $request)
+    public function store(Request $request)
     {
-        KK::create($request->all());
-        alert()->success('Berhasil','Data Telah Ditambahkan');
-        return redirect('/kartu-keluarga');
+        //
     }
 
     /**
@@ -49,10 +43,9 @@ class KKController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(KK $kartuKeluarga)
+    public function show($id)
     {
-        $data_penduduk = Penduduk::where('k_k_id',$kartuKeluarga->id)->get();
-        return view('kk.detail',compact('kartuKeluarga','data_penduduk'));
+        //
     }
 
     /**
@@ -61,9 +54,9 @@ class KKController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(KK $kartuKeluarga)
+    public function edit($id)
     {
-        return view('kk.ubah',compact('kartuKeluarga'));
+        //
     }
 
     /**
@@ -73,11 +66,9 @@ class KKController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(FormKKRequest $request, KK $kartuKeluarga)
+    public function update(Request $request, $id)
     {
-        $kartuKeluarga->update($request->all());
-        alert()->success('Berhasil','Data telah Diubah');
-        return redirect('/kartu-keluarga');
+        //
     }
 
     /**
@@ -86,10 +77,8 @@ class KKController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(KK $kartuKeluarga)
+    public function destroy($id)
     {
-        $kartuKeluarga->delete();
-        alert()->success('Berhasil','Data Telah Dihapus');
-        return redirect('/kartu-keluarga');
+        //
     }
 }
