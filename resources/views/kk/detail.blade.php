@@ -4,7 +4,7 @@
  <!-- DataTales Example -->
  <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Kartu Keluarga</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Kartu Keluarga {{$kartuKeluarga->kepala_keluarga}} </h6>
     </div>
     <div class="card-body">
         <a href="{{route('penduduk.create')}}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah Kartu Keluarga</a>
@@ -12,6 +12,7 @@
         <table class="table table-hover" id="dataTable">
             <thead>
                 <tr>
+                    <th class="text-center">Kepala keluarga</th>
                     <th>NIK</th>
                     <th>Nama</th>
                     <th>Jenis Kelamin</th>
@@ -25,6 +26,11 @@
                 <tbody> 
                     @foreach ($data_penduduk as $penduduk)
                     <tr>
+                        @if ($penduduk->nama == $kartuKeluarga->kepala_keluarga)
+                            <td class="text-center"><span class="btn btn-sm btn-primary"><i class="fa fa-user"></i></span></td>
+                        @else
+                            <td class="text-center"><span class="btn btn-sm btn-primary"><i class="fa fa-box"></i></span></td>
+                        @endif
                         <td>{{$penduduk->nik}}</td>
                         <td>{{$penduduk->nama}}</td>
                         <td>{{$penduduk->jenis_kelamin}}</td>
@@ -42,6 +48,11 @@
                     @endforeach
                 </tbody>
         </table>
+        <div style="margin-top: 40px;">
+            <span class="btn btn-sm btn-primary"><i class="fa fa-user"></i></span> <span class="ml-2" style="color:black;">Kepala Keluarga</span>
+            <span class="btn btn-sm btn-primary ml-4"><i class="fa fa-box"></i></span> <span class="ml-2" style="color:black;">Bukan Kepala Keluarga</span>
+        </div>
+        </div>
       </div>
     </div>
   </div>
