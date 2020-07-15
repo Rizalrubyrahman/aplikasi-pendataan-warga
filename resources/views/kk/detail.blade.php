@@ -7,7 +7,6 @@
       <h6 class="m-0 font-weight-bold text-primary">Kartu Keluarga {{$kartuKeluarga->kepala_keluarga}} </h6>
     </div>
     <div class="card-body">
-        <a href="{{route('penduduk.create')}}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah Kartu Keluarga</a>
       <div class="table-responsive mt-4">
         <table class="table table-hover" id="dataTable">
             <thead>

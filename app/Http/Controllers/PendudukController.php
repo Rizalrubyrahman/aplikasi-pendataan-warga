@@ -1,8 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Penduduk;
 use Illuminate\Http\Request;
+use App\Http\Requests\FormPendudukRequest;
+use App\Agama;
+use App\Klasifikasi;
+use App\KK;
 
 class PendudukController extends Controller
 {
@@ -13,7 +17,8 @@ class PendudukController extends Controller
      */
     public function index()
     {
-        //
+        $data_penduduk = Penduduk::all();
+        return view('penduduk.index',compact('data_penduduk'));
     }
 
     /**
@@ -32,7 +37,7 @@ class PendudukController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormPendudukRequest $request)
     {
         //
     }
@@ -43,9 +48,9 @@ class PendudukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Penduduk $penduduk)
     {
-        //
+        return view('penduduk.detail',compact('penduduk'));
     }
 
     /**
@@ -54,9 +59,12 @@ class PendudukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Penduduk $penduduk)
     {
-        //
+        $agama = Agama::all();
+        $klasifikasi = Klasifikasi::all();
+        $kk = KK::all();
+        return view('penduduk.ubah',compact('penduduk','agama','klasifikasi','kk'));
     }
 
     /**
@@ -66,9 +74,11 @@ class PendudukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormPendudukRequest $request, Penduduk $penduduk)
     {
-        //
+        $penduduk->update($request->all());
+        alert()->success('Berhasil','Data Telah Diubah');
+        return redirect('/penduduk');
     }
 
     /**
@@ -77,8 +87,9 @@ class PendudukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Penduduk $penduduk)
     {
-        //
+        $penduduk->delete();
+        return redirect('/penduduk');
     }
 }
