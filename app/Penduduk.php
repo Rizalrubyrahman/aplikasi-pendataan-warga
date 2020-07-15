@@ -25,14 +25,14 @@ class Penduduk extends Model
     protected $table = 'penduduk';
     public function kk()
     {
-        return $this->belongsTo(KK::class);
+        return $this->belongsTo(KK::class,'k_k_id');
     }
     public function agama()
     {
-        return $this->belongsTo(Agama::class);
+        return $this->belongsTo(Agama::class,'agama_id');
     }
     public function klasifikasi()
     {
-        return $this->belongsTo(Klasifikasi::class);
+        return $this->belongsTo(Klasifikasi::class,'klasifikasi_id');
     }
 }

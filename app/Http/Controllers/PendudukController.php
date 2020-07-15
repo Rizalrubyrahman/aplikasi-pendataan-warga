@@ -50,7 +50,8 @@ class PendudukController extends Controller
      */
     public function show(Penduduk $penduduk)
     {
-        return view('penduduk.detail',compact('penduduk'));
+        $kk = KK::all()->toArray();
+        return view('penduduk.detail',compact('penduduk','kk'));
     }
 
     /**
@@ -90,6 +91,7 @@ class PendudukController extends Controller
     public function destroy(Penduduk $penduduk)
     {
         $penduduk->delete();
+        alert()->success('Berhasil','Data Telah Di hapus');
         return redirect('/penduduk');
     }
 }
