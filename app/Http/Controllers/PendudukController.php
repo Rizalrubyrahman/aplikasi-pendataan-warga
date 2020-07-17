@@ -28,7 +28,10 @@ class PendudukController extends Controller
      */
     public function create()
     {
-        //
+        $kk = KK::all();
+        $klasifikasi = Klasifikasi::all();
+        $agama = Agama::all();
+        return view('penduduk.tambah',compact('kk','klasifikasi','agama'));
     }
 
     /**
@@ -39,7 +42,9 @@ class PendudukController extends Controller
      */
     public function store(FormPendudukRequest $request)
     {
-        //
+        Penduduk::create($request->all());
+        alert()->success('Berhasil','Data Telah Ditambahkan');
+        return redirect('/penduduk');
     }
 
     /**
@@ -50,8 +55,7 @@ class PendudukController extends Controller
      */
     public function show(Penduduk $penduduk)
     {
-        $kk = KK::all()->toArray();
-        return view('penduduk.detail',compact('penduduk','kk'));
+        return view('penduduk.detail',compact('penduduk'));
     }
 
     /**
