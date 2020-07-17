@@ -53,8 +53,8 @@ class PendudukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Penduduk $penduduk)
-    {
+    public function show(Penduduk $penduduk,Request $request)
+    {      
         return view('penduduk.detail',compact('penduduk'));
     }
 
@@ -97,5 +97,45 @@ class PendudukController extends Controller
         $penduduk->delete();
         alert()->success('Berhasil','Data Telah Di hapus');
         return redirect('/penduduk');
+    }
+    public function tambahKtp(Request $request,$id)
+    {
+        $tempat_file = public_path('/images');
+        $penduduk = Penduduk::find($id);
+        $penduduk->update($request->all());
+        if($request->hasFile('ktp')){
+            $request->file('ktp')->move($tempat_file,$request->file('ktp')->getClientOriginalName());
+            $penduduk->ktp = $request->file('ktp')->getClientOriginalName();
+            $penduduk->save();   
+        }
+        alert()->success('Berhasil','E-Ktp Telah Di Upload');
+        return redirect()->back();
+    }
+    public function tambahIjazah(Request $request,$id)
+    {
+        $tempat_file = public_path('images/');
+        $penduduk = Penduduk::find($id);
+        $penduduk->update($request->all());
+        if($request->hasFile('ijazah')){
+            $request->file('ijazah')->move($tempat_file,$request->file('ijazah')->getClientOriginalName());
+            $penduduk->ijazah = $request->file('ijazah')->getClientOriginalName();
+            $penduduk->save();
+        }
+        alert()->success('Berhasil','Ijazah Telah Diupload');
+        return redirect()->back();
+    }
+    public function hapusKtp($id)
+    {
+        $penduduk = Penduduk::find($id);
+        $penduduk->update(['ktp' => null]);
+        alert()->success('Berhasil','E-Ktp Telah Dihapus');
+        return redirect()->back();
+    }
+    public function hapusIjazah($id)
+    {
+        $penduduk = Penduduk::find($id);
+        $penduduk->update(['ijazah' => null]);
+        alert()->success('Berhasil','E-Ktp Telah Dihapus');
+        return redirect()->back();
     }
 }

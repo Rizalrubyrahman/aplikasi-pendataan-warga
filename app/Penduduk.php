@@ -21,6 +21,8 @@ class Penduduk extends Model
         'pendidikan',
         'status_perkawinan',
         'kewarganegaraan',
+        'ktp',
+        'ijazah',
     ];
     protected $table = 'penduduk';
     public function kk()
@@ -34,5 +36,13 @@ class Penduduk extends Model
     public function klasifikasi()
     {
         return $this->belongsTo(Klasifikasi::class,'klasifikasi_id');
+    }
+    public function getKtp()
+    {
+        return asset('images/'.$this->ktp);
+    }
+    public function getIjazah()
+    {
+        return asset('images/'.$this->ijazah);
     }
 }

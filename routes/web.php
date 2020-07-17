@@ -28,3 +28,9 @@ Route::resource('kartu-keluarga', 'KKController');
 
 //penduduk
 Route::resource('penduduk', 'PendudukController');
+
+//image
+Route::put('image/{id}/tambah-ktp','PendudukController@tambahKtp');
+Route::put('image/{id}/tambah-ijazah','PendudukController@tambahIjazah');
+Route::put('image/{id}/ktp','PendudukController@hapusKtp');
+Route::put('image/{id}/hapus-ijazah','PendudukController@hapusIjazah');
