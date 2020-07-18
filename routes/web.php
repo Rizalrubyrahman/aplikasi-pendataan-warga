@@ -16,16 +16,16 @@ Route::get('/','DashboardController@index');
 
 //agama
 Route::resource('agama', 'AgamaController');
-
+Route::get('/agama/{agama}/hapus','AgamaController@delete');
 //klasifikasi
 Route::resource('klasifikasi', 'KlasifikasiController');
-
+Route::get('/klasifikasi/{klasifikasi}/hapus','KlasifikasiController@delete');
 //kk
 Route::resource('kartu-keluarga', 'KKController');
-
+Route::get('/kartu-keluarga/{kartuKeluarga}/hapus','KKController@delete');
 //penduduk
 Route::resource('penduduk', 'PendudukController');
-
+Route::get('/penduduk/{penduduk}/hapus','PendudukController@delete');
 //image
 Route::put('image/{id}/tambah-ktp','PendudukController@tambahKtp');
 Route::put('image/{id}/tambah-ijazah','PendudukController@tambahIjazah');

@@ -89,9 +89,9 @@ class AgamaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Agama $agama)
+    public function delete(Agama $agama)
     {;
-        $agama->delete();
+        $agama->delete($agama);
         alert()->success('Berhasil','Data Telah Dihapus');
         return redirect('/agama');
     }

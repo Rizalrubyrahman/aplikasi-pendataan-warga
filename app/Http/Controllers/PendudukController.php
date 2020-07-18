@@ -92,9 +92,9 @@ class PendudukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Penduduk $penduduk)
+    public function delete(Penduduk $penduduk)
     {
-        $penduduk->delete();
+        $penduduk->delete($penduduk);
         alert()->success('Berhasil','Data Telah Di hapus');
         return redirect('/penduduk');
     }

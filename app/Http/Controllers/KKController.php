@@ -86,9 +86,9 @@ class KKController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(KK $kartuKeluarga)
+    public function delete(KK $kartuKeluarga)
     {
-        $kartuKeluarga->delete();
+        $kartuKeluarga->delete($kartuKeluarga);
         alert()->success('Berhasil','Data Telah Dihapus');
         return redirect('/kartu-keluarga');
     }

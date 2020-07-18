@@ -88,9 +88,9 @@ class KlasifikasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Klasifikasi $klasifikasi)
+    public function delete(Klasifikasi $klasifikasi)
     {
-        $klasifikasi->delete();
+        $klasifikasi->delete($klasifikasi);
         alert()->success('Berhasil','Data Telah Dihapus');
         return redirect('/klasifikasi');
     }

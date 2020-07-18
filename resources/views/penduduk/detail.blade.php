@@ -25,7 +25,7 @@
                                     </form> 
                                 </th>
                             @else
-                                <th class="text-center"><h5>E-Ktp Belom Di Upload</h5></th>
+                                <th class="text-center"><h6>E-Ktp Belum Di Upload</h6></th>
                             @endif  
                                       
                         </tr>
@@ -43,7 +43,7 @@
                                     </form> 
                                 </th>
                             @else
-                                <th class="text-center"><h5>Ijazah Belom Di Upload</h5></th>
+                                <th class="text-center"><h6>Ijazah Belum Di Upload</h6></th>
                             @endif             
                         </tr>
                     </table>

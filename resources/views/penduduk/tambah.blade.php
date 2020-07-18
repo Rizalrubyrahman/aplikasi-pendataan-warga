@@ -47,6 +47,7 @@
             <div class="form-group">
                 <label>Pekerjaan</label>
                 <input type="text" name="pekerjaan" class="form-control {{$errors->has('pekerjaan') ? 'is-invalid' : ''}}" value="{{old('pekerjaan')}}" placeholder="Masukan Pekerjaan">
+                <small>*jika belum Ada mohon ketik -</small>
                 {!!$errors->first('pekerjaan','<span class="invalid-feedback">:message</span>')!!}
             </div>
             <div class="form-group">

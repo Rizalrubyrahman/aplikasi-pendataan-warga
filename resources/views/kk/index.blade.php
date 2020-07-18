@@ -37,11 +37,7 @@
                         <td class="text-center"><span class="badge badge-warning">{{$kk->penduduk->where('k_k_id',$kk->id)->count()}} Orang</span></td>
                         <td class="text-center">
                             <a href="{{route('kartu-keluarga.edit', $kk->id)}}" class="btn btn-sm btn-warning" title="Ubah"><i class="fa fa-pen" ></i></a>
-                            <form action="{{route('kartu-keluarga.destroy',$kk->id)}}" method="post" style="display: inline;">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="_method" value="delete">
-                                <button type="submit" class="btn btn-sm btn-danger" title="Hapus"><i class="fa fa-trash"></i></button>
-                            </form>
+                              <a href="#" class="btn btn-sm btn-danger delete" kk-id="{{ $kk->id }}" title="Hapus"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr> 
                     @endforeach
@@ -50,4 +46,23 @@
       </div>
     </div>
   </div>
+@endsection
+@section('javascript')
+    <script>
+      $('.delete').click(function(){
+        var kk_id = $(this).attr('kk-id');
+        swal({
+        title: "Apa kamu yakin?",
+        text: "Data akan dihapus",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          window.location = "/kartu-keluarga/"+kk_id+"/hapus";
+        }
+      });
+      });
+    </script>
 @endsection
