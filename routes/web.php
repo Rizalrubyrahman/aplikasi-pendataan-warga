@@ -41,4 +41,4 @@ Route::group(['middleware' => ['auth']], function () {
 //login
 Route::get('/login','AuthController@index')->name('login');
 Route::post('/login','AuthController@cekLogin');
-Route::post('/logout','AuthController@logout');
+Route::get('/logout','AuthController@logout');
