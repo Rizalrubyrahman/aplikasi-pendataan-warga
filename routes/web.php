@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth']], function () {
     //penduduk
     Route::resource('penduduk', 'PendudukController');
     Route::get('/penduduk/{penduduk}/hapus','PendudukController@delete');
-    
+
     //image
     Route::put('image/{id}/tambah-ktp','PendudukController@tambahKtp');
     Route::put('image/{id}/tambah-ijazah','PendudukController@tambahIjazah');
@@ -41,3 +41,4 @@ Route::group(['middleware' => ['auth']], function () {
 //login
 Route::get('/login','AuthController@index')->name('login');
 Route::post('/login','AuthController@cekLogin');
+Route::post('/logout','AuthController@logout');
