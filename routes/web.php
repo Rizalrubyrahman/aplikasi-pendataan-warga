@@ -35,6 +35,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('image/{id}/tambah-ijazah','PendudukController@tambahIjazah');
     Route::put('image/{id}/ktp','PendudukController@hapusKtp');
     Route::put('image/{id}/hapus-ijazah','PendudukController@hapusIjazah');
+
+    //laporan
+    //kartu kelauarga
+    Route::get('/laporan/kartu-keluarga','LaporanController@kartuKeluarga');
 });
 
 
