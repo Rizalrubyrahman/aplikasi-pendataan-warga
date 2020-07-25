@@ -30,7 +30,7 @@
                         <td>{{$penduduk->nik}}</td>
                         <td>{{$penduduk->nama}}</td>
                         <td>{{$penduduk->jenis_kelamin}}</td>
-                        <td>{{$penduduk->tempat_lahir}},{{$penduduk->tanggal_lahir}}</td>
+                        <td>{{$penduduk->tempat_lahir}},{{date('d-m-Y',strtotime($penduduk->tanggal_lahir))}}</td>
                         <td class="text-center">
                             <a href="{{route('penduduk.show',$penduduk->id)}}" class="btn btn-sm btn-success"><i class="fa fa-search"></i></a>
                             <a href="{{route('penduduk.edit', $penduduk->id)}}" class="btn btn-sm btn-warning" title="Ubah"><i class="fa fa-pen" ></i></a>

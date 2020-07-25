@@ -40,7 +40,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Tanggal Lahir</label>
-                        <input type="date" name="tanggal_lahir" class="form-control {{$errors->has('tanggal_lahir') ? 'is-invalid' : ''}}" value="{{$penduduk->tanggal_lahir}}">
+                        <input type="date" name="tanggal_lahir" class="form-control {{$errors->has('tanggal_lahir') ? 'is-invalid' : ''}}" value="{{date('d-m-Y',strtotime($penduduk->tanggal_lahir))}}">
                         {!!$errors->first('tanggal_lahir','<span class="invalid-feedback">:message</span>')!!}
                     </div>
                 </div>

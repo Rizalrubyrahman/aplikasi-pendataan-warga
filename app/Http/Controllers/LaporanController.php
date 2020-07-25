@@ -18,4 +18,15 @@ class LaporanController extends Controller
         $pdf = PDF::loadView('laporan.kk-pdf',compact('data_kk'));
         return $pdf->download('Laporan-Kartu-Keluarga'.date('d-m-yy_H-i-s').'.pdf');
     }
+    public function penduduk()
+    {
+        return view('laporan.penduduk');
+    }
+    public function pendudukPdf()
+    {
+        $data_penduduk = Penduduk::all();
+        $pdf = PDF::loadView('laporan.penduduk-pdf',compact('data_penduduk'));
+         return $pdf->download('laporan_penduduk'.date('d-m-yy_H-i-s').'.pdf');
+    }
+
 }

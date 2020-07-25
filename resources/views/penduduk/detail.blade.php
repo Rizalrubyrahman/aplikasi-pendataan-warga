@@ -65,7 +65,7 @@
                     </tr>
                     <tr>
                         <td>Tempat,Tanggal Lahir</td>
-                        <td>{{$penduduk->tempat_lahir}},{{$penduduk->tanggal_lahir}}</td>
+                        <td>{{$penduduk->tempat_lahir}},{{date('d-m-Y',strtotime($penduduk->tanggal_lahir))}}</td>
                     </tr>
                     <tr>
                         <td>Pekerjaan</td>
