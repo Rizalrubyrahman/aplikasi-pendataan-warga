@@ -39,6 +39,7 @@ Route::group(['middleware' => ['auth']], function () {
     //laporan
     //kartu kelauarga
     Route::get('/laporan/kartu-keluarga','LaporanController@kartuKeluarga');
+    Route::get('/laporan/kartu-keluarga/pdf','LaporanController@kartuKeluargaPdf');
 });
 
 

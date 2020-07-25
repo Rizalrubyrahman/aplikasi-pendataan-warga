@@ -33,10 +33,22 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="/kartu-keluarga">Kartu Keluarga</a>
             <a class="collapse-item" href="/penduduk">Penduduk</a>
-            <a class="collapse-item" href="">Laporan</a>
           </div>
         </div>
       </li>
+      <hr class="sidebar-divider">
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Laporan</span>
+          </a>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="/laporan/kartu-keluarga">Laporan Kartu Keluarga</a>
+              <a class="collapse-item" href="/laporan/penduduk">Laporan Penduduk</a>
+            </div>
+          </div>
+        </li>
 
   </ul>
   <!-- End of Sidebar -->
