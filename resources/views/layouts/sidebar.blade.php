@@ -45,7 +45,7 @@
           <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
               <a class="collapse-item" href="/laporan/kartu-keluarga">Laporan Kartu Keluarga</a>
-              <a class="collapse-item" href="/laporan/penduduk">Laporan Penduduk</a>
+              <a class="collapse-item" href="/laporan/agama">Laporan Penduduk</a>
             </div>
           </div>
         </li>

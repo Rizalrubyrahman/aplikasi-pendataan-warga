@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use PDF;
 use App\KK;
-use App\Penduduk;
+use App\Agama;
 use Illuminate\Http\Request;
 
 class LaporanController extends Controller
@@ -20,13 +20,13 @@ class LaporanController extends Controller
     }
     public function penduduk()
     {
-        return view('laporan.penduduk');
+        return view('laporan.agama');
     }
-    public function pendudukPdf()
+    public function agamaPdf()
     {
-        $data_penduduk = Penduduk::all();
-        $pdf = PDF::loadView('laporan.penduduk-pdf',compact('data_penduduk'));
-         return $pdf->download('laporan_penduduk'.date('d-m-yy_H-i-s').'.pdf');
+        $data_agama = Agama::all();
+        $pdf = PDF::loadView('laporan.agama-pdf',compact('data_agama'));
+         return $pdf->download('laporan_agama'.date('d-m-yy_H-i-s').'.pdf');
     }
 
 }
