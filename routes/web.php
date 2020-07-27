@@ -44,6 +44,10 @@ Route::group(['middleware' => ['auth']], function () {
     //agama
     Route::get('/laporan/agama','LaporanController@agama');
     Route::get('/laporan/agama/pdf','LaporanController@agamaPdf');
+
+    //klasifikasi
+    Route::get('/laporan/klasifikasi','LaporanController@klasifikasi');
+    Route::get('/laporan/klasifikasi/pdf','LaporanController@klasifikasiPdf');
 });
 
 

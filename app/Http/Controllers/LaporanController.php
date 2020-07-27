@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use PDF;
 use App\KK;
 use App\Agama;
+use App\Klasifikasi;
 use Illuminate\Http\Request;
 
 class LaporanController extends Controller
@@ -28,5 +29,14 @@ class LaporanController extends Controller
         $pdf = PDF::loadView('laporan.agama-pdf',compact('data_agama'));
          return $pdf->download('laporan_agama '.date('d-m-yy_H-i-s').'.pdf');
     }
-
+    public function klasifikasi()
+    {
+        return view('laporan.klasifikasi');
+    }
+    public function klasifikasiPdf()
+    {
+        $data_klasifikasi = Klasifikasi::all();
+        $pdf = PDF::loadView('laporan.klasifikasi-pdf',compact('data_klasifikasi'));
+        return $pdf->download('Laporan_Klasifikasi '.date('d-m-Y_H-i-s').'.pdf');
+    }
 }

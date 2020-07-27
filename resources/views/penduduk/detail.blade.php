@@ -12,7 +12,7 @@
                 <div class="table-responsive mt-4">
                     <table class="table table-striped">
                         <tr>
-                            <th class="text-center">E-Ktp</th>
+                            <th class="text-center">Ktp</th>
                         </tr>
                         <tr>
                             @if ($penduduk->ktp)
@@ -25,7 +25,7 @@
                                     </form> 
                                 </th>
                             @else
-                                <th class="text-center"><h6>E-Ktp Belum Di Upload</h6></th>
+                                <th class="text-center"><h6>Ktp Belum Di Upload</h6></th>
                             @endif  
                                       
                         </tr>
@@ -113,13 +113,13 @@
             <div class="table-responsive mt-4">
                 <table class="table table-striped table-bordered" id="dataTable"> 
                     <tr>
-                        <td><span class="mt-4" style="margin-top:50px; position: absolute;">E-Ktp</span></td>     
+                        <td><span class="mt-4" style="margin-top:50px; position: absolute;">Ktp</span></td>     
                         <td>
                             <form action="/image/{{$penduduk->id}}/tambah-ktp" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="_method" value="put">
                                 <input type="file" name="ktp" class="form-control">
-                                <button type="submit" class="btn btn-sm btn-primary mt-4"><i class="fa fa-plus"></i> Tambah E-Ktp</button>
+                                <button type="submit" class="btn btn-sm btn-primary mt-4"><i class="fa fa-plus"></i> Tambah Ktp</button>
                             </form>
                         </td>
                     </tr>
@@ -130,7 +130,7 @@
                                 {{ csrf_field() }}
                                 <input type="hidden" name="_method" value="put">
                                 <input type="file" name="ijazah" class="form-control">
-                                <button type="submit" class="btn btn-sm btn-primary mt-4"><i class="fa fa-plus"></i> Tambah E-Ktp</button>
+                                <button type="submit" class="btn btn-sm btn-primary mt-4"><i class="fa fa-plus"></i> Tambah Ijazah</button>
                             </form>
                         </td>
                     </tr>
