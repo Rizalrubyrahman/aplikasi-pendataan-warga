@@ -16,9 +16,9 @@ class LaporanController extends Controller
     {
         $data_kk = KK::all();
         $pdf = PDF::loadView('laporan.kk-pdf',compact('data_kk'));
-        return $pdf->download('Laporan-Kartu-Keluarga'.date('d-m-yy_H-i-s').'.pdf');
+        return $pdf->download('Laporan-Kartu-Keluarga '.date('d-m-yy_H-i-s').'.pdf');
     }
-    public function penduduk()
+    public function agama()
     {
         return view('laporan.agama');
     }
@@ -26,7 +26,7 @@ class LaporanController extends Controller
     {
         $data_agama = Agama::all();
         $pdf = PDF::loadView('laporan.agama-pdf',compact('data_agama'));
-         return $pdf->download('laporan_agama'.date('d-m-yy_H-i-s').'.pdf');
+         return $pdf->download('laporan_agama '.date('d-m-yy_H-i-s').'.pdf');
     }
 
 }
