@@ -1,2 +1,1 @@
-# Aplikasi-Data-Desa
-Aplikasi Sederhana Pendataan Penduduk
+Aplikasi Sederhana Pendataan warga menggunakan framework laravel
