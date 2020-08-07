@@ -40,7 +40,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Tanggal Lahir</label>
-                        <input type="date" name="tanggal_lahir" class="form-control {{$errors->has('tanggal_lahir') ? 'is-invalid' : ''}}" value="{{date('d-m-Y',strtotime($penduduk->tanggal_lahir))}}">
+                        <input type="date" name="tanggal_lahir" class="form-control {{$errors->has('tanggal_lahir') ? 'is-invalid' : ''}}" value="{{$penduduk->tanggal_lahir}}">
                         {!!$errors->first('tanggal_lahir','<span class="invalid-feedback">:message</span>')!!}
                     </div>
                 </div>
@@ -52,12 +52,13 @@
             </div>
             <div class="form-group">
                 <label style="float: left;" for="agama">Agama</label>
-                <select class="form-control" id="agama" name="agama_id">
-                    <option>--Pilih--</option>
+                <select class="form-control {{$errors->has('agama_id') ? 'is-invalid' : ''}}" id="agama" name="agama_id">
+                    <option selected disabled>--Pilih--</option>
                     @foreach ($agama as $data)
                         <option value="{{$data->id}}" {{($data->id == $penduduk->agama_id) ? 'selected' : ''}}>{{$data->nama_agama}}</option>
                     @endforeach
                   </select>
+                  {!!$errors->first('agama_id','<span class="invalid-feedback">:message</span>')!!}
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -77,7 +78,7 @@
                     <div class="form-group">
                         <label style="float: left;" for="klasifikasi_id">Klasifikasi</label>
                         <select class="form-control" id="klasifikasi_id" name="klasifikasi_id">
-                            <option>--Pilih--</option>
+                            <option selected disabled>--Pilih--</option>
                             @foreach ($klasifikasi as $data)
                                 <option value="{{$data->id}}" {{($data->id == $penduduk->klasifikasi_id) ? 'selected' : ''}}>{{$data->klasifikasi}}</option>
                             @endforeach
@@ -90,7 +91,7 @@
                     <div class="form-group">
                         <label style="float: left;" for="status">Status Perkawinan</label>
                         <select class="form-control" id="status" name="status_perkawinan">
-                            <option>--Pilih--</option>
+                            <option selected disabled>--Pilih--</option>
                             <option value="BELUM MENIKAH" {{($penduduk->status_perkawinan == 'BELUM MENIKAH') ? 'selected' : ''}}>BELUM MENIKAH</option>
                             <option value="MENIKAH" {{($penduduk->status_perkawinan == 'MENIKAH') ? 'selected' : ''}}>MENIKAH</option>
                           </select>
@@ -100,7 +101,7 @@
                     <div class="form-group">
                         <label style="float: left;" for="warga">Kewarganegaraan</label>
                         <select class="form-control" id="warga" name="kewarganegaraan">
-                            <option>--Pilih--</option>
+                            <option selected disabled>--Pilih--</option>
                             <option value="WNI" {{($penduduk->kewarganegaraan == 'WNI') ? 'selected' : ''}}>WNI</option>
                             <option value="WNA" {{($penduduk->kewarganegaraan == 'WNA') ? 'selected' : ''}}>WNA</option>
                           </select>

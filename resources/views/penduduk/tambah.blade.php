@@ -11,12 +11,13 @@
             {{ csrf_field() }}
             <div class="form-group">
                 <label style="float: left;" for="kk">Kartu Keluarga</label>
-                <select class="form-control" id="kk" name="k_k_id">
-                    <option>--Pilih--</option>
+                <select class="form-control{{ $errors->has('k_k_id') ? ' is-invalid' : '' }}" id="kk" name="k_k_id">
+                    <option selected disabled>--Pilih--</option>
                     @foreach ($kk as $data)
-                        <option value="{{$data->id}}">{{$data->no_kk}} </option>
+                        <option value="{{$data->id}}">{{$data->no_kk}} {{ $data->kepala_keluarga }}</option>
                     @endforeach
                   </select>
+                  {!!$errors->first('k_k_id','<span class="invalid-feedback">:message</span>')!!}
             </div>
             <div class="form-group">
                 <label>NIK</label>
@@ -52,12 +53,13 @@
             </div>
             <div class="form-group">
                 <label style="float: left;" for="agama">Agama</label>
-                <select class="form-control" id="agama" name="agama_id">
-                    <option>--Pilih--</option>
+                <select class="form-control{{ $errors->has('agama_id') ? ' is-invalid' : '' }}" id="agama" name="agama_id">
+                    <option  selected disabled>--Pilih--</option>
                     @foreach ($agama as $data)
                         <option value="{{$data->id}}">{{$data->nama_agama}}</option>
                     @endforeach
                   </select>
+                  {!!$errors->first('agama_id','<span class="invalid-feedback">:message</span>')!!}
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -72,16 +74,18 @@
                           Perempuan
                         </label>
                       </div>
+                      {!!$errors->first('jenis_kelamin','<span class="invalid-feedback">:message</span>')!!}
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label style="float: left;" for="klasifikasi_id">Klasifikasi</label>
-                        <select class="form-control" id="klasifikasi_id" name="klasifikasi_id">
-                            <option>--Pilih--</option>
+                        <select class="form-control{{ $errors->has('klasifikasi_id') ? ' is-invalid' : '' }}" id="klasifikasi_id" name="klasifikasi_id">
+                            <option selected disabled>--Pilih--</option>
                             @foreach ($klasifikasi as $data)
                                 <option value="{{$data->id}}"">{{$data->klasifikasi}}</option>
                             @endforeach
                           </select>
+                          {!!$errors->first('klasifikasi_id','<span class="invalid-feedback">:message</span>')!!}
                     </div>
                 </div>
             </div>
@@ -89,21 +93,23 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label style="float: left;" for="status">Status Perkawinan</label>
-                        <select class="form-control" id="status" name="status_perkawinan">
-                            <option>--Pilih--</option>
+                        <select class="form-control{{ $errors->has('status_perkawinan') ? ' is-invalid' : '' }}" id="status" name="status_perkawinan">
+                            <option selected disabled>--Pilih--</option>
                             <option value="BELUM MENIKAH">BELUM MENIKAH</option>
                             <option value="MENIKAH">MENIKAH</option>
                           </select>
+                          {!!$errors->first('status_perkawinan','<span class="invalid-feedback">:message</span>')!!}
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label style="float: left;" for="warga">Kewarganegaraan</label>
-                        <select class="form-control" id="warga" name="kewarganegaraan">
-                            <option>--Pilih--</option>
+                        <select class="form-control{{ $errors->has('kewarganegaraan') ? ' is-invalid' : '' }}" id="warga" name="kewarganegaraan">
+                            <option selected disabled>--Pilih--</option>
                             <option value="WNI">WNI</option>
                             <option value="WNA">WNA</option>
                           </select>
+                          {!!$errors->first('kewarganegaraan','<span class="invalid-feedback">:message</span>')!!}
                     </div>
                 </div>
                 <div class="col-md-4">

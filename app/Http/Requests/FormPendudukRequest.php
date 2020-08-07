@@ -25,6 +25,12 @@ class FormPendudukRequest extends FormRequest
     {
         return [
             'nik' => 'required',
+            'k_k_id' => 'required',
+            'agama_id' => 'required',
+            'klasifikasi_id' => 'required',
+            'jenis_kelamin' => 'required',
+            'kewarganegaraan' => 'required',
+            'status_perkawinan' => 'required',
             'nama' => 'required|min:3',
             'tempat_lahir' => 'required|min:3',
             'tanggal_lahir' => 'required',
@@ -37,6 +43,12 @@ class FormPendudukRequest extends FormRequest
     {
         return [
             'nik.required' => 'NIK Tidak Boleh Kosong',
+            'k_k_id.required' => 'Kartu Keluarga Tidak Boleh Kosong',
+            'agama_id.required' => 'Agama Tidak Boleh Kosong',
+            'klasifikasi_id.required' => 'Klasifikasi Tidak Boleh Kosong',
+            'jenis_kelamin.required' => 'Jenis Kelamin Tidak Boleh Kosong',
+            'kewarganegaraan.required' => 'Kewarganegaraan Tidak Boleh Kosong',
+            'status_perkawinan.required' => 'Status Perkawinan Tidak Boleh Kosong',
             'nama.required' => 'Nama Tidak Boleh Kosong',
             'nama.min' => 'Nama Minimal 3 Karakter',
             'tempat_lahir.required' => 'Tempat Lahir Tidak Boleh Kosong',
