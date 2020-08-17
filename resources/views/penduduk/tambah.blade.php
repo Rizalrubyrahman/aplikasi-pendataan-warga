@@ -14,7 +14,7 @@
                 <select class="form-control{{ $errors->has('k_k_id') ? ' is-invalid' : '' }}" id="kk" name="k_k_id">
                     <option selected disabled>--Pilih--</option>
                     @foreach ($kk as $data)
-                        <option value="{{$data->id}}">{{$data->no_kk}} {{ $data->kepala_keluarga }}</option>
+                        <option value="{{$data->id}}" @if(old('k_k_id') == $data->id) selected @endif>{{$data->no_kk}} {{ $data->kepala_keluarga }}</option>
                     @endforeach
                   </select>
                   {!!$errors->first('k_k_id','<span class="invalid-feedback">:message</span>')!!}
@@ -56,7 +56,7 @@
                 <select class="form-control{{ $errors->has('agama_id') ? ' is-invalid' : '' }}" id="agama" name="agama_id">
                     <option  selected disabled>--Pilih--</option>
                     @foreach ($agama as $data)
-                        <option value="{{$data->id}}">{{$data->nama_agama}}</option>
+                        <option value="{{$data->id}}" @if(old('agama_id') == $data->id) selected @endif>{{$data->nama_agama}}</option>
                     @endforeach
                   </select>
                   {!!$errors->first('agama_id','<span class="invalid-feedback">:message</span>')!!}
@@ -65,11 +65,11 @@
                 <div class="col-md-6">
                     <label style="float: left;">Jenis Kelamin</label><br><br>
                     <div class="form-check"  style="float: left;">
-                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="exampleRadios1" value="Laki-Laki">
+                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="exampleRadios1" value="Laki-Laki" @if(old('jenis_kelamin') == 'Laki-Laki') checked @endif>
                         <label class="form-check-label" for="exampleRadios1">
                           Laki-Laki
                         </label>
-                        <input class="form-check-input ml-2" type="radio" name="jenis_kelamin" id="exampleRadios1" value="Perempuan">
+                        <input class="form-check-input ml-2" type="radio" name="jenis_kelamin" id="exampleRadios1" value="Perempuan" @if(old('jenis_kelamin') == 'Perempuan') checked @endif>
                         <label class="form-check-label ml-4" for="exampleRadios1">
                           Perempuan
                         </label>
@@ -82,7 +82,7 @@
                         <select class="form-control{{ $errors->has('klasifikasi_id') ? ' is-invalid' : '' }}" id="klasifikasi_id" name="klasifikasi_id">
                             <option selected disabled>--Pilih--</option>
                             @foreach ($klasifikasi as $data)
-                                <option value="{{$data->id}}"">{{$data->klasifikasi}}</option>
+                                <option value="{{$data->id}}" @if(old('klasifikasi_id') == $data->id) selected @endif>{{$data->klasifikasi}}</option>
                             @endforeach
                           </select>
                           {!!$errors->first('klasifikasi_id','<span class="invalid-feedback">:message</span>')!!}
@@ -95,8 +95,8 @@
                         <label style="float: left;" for="status">Status Perkawinan</label>
                         <select class="form-control{{ $errors->has('status_perkawinan') ? ' is-invalid' : '' }}" id="status" name="status_perkawinan">
                             <option selected disabled>--Pilih--</option>
-                            <option value="BELUM MENIKAH">BELUM MENIKAH</option>
-                            <option value="MENIKAH">MENIKAH</option>
+                            <option value="BELUM MENIKAH" @if(old('status_perkawinan') == 'BELUM MENIKAH') selected @endif>BELUM MENIKAH</option>
+                            <option value="MENIKAH" @if(old('status_perkawinan') == 'MENIKAH') selected @endif>MENIKAH</option>
                           </select>
                           {!!$errors->first('status_perkawinan','<span class="invalid-feedback">:message</span>')!!}
                     </div>
@@ -106,8 +106,8 @@
                         <label style="float: left;" for="warga">Kewarganegaraan</label>
                         <select class="form-control{{ $errors->has('kewarganegaraan') ? ' is-invalid' : '' }}" id="warga" name="kewarganegaraan">
                             <option selected disabled>--Pilih--</option>
-                            <option value="WNI">WNI</option>
-                            <option value="WNA">WNA</option>
+                            <option value="WNI" @if(old('kewarganegaraan') == 'WNI') selected @endif>WNI</option>
+                            <option value="WNA" @if(old('kewarganegaraan') == 'WNA') selected @endif>WNA</option>
                           </select>
                           {!!$errors->first('kewarganegaraan','<span class="invalid-feedback">:message</span>')!!}
                     </div>

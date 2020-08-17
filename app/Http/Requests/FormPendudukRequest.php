@@ -21,6 +21,7 @@ class FormPendudukRequest extends FormRequest
      *
      * @return array
      */
+    //membuat validasi form penduduk
     public function rules()
     {
         return [

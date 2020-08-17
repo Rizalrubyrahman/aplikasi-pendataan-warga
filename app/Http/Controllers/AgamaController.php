@@ -12,30 +12,17 @@ class AgamaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //mengambil semua data kemudian tampilkan di agama index
     public function index()
     {
         $data_agama = Agama::all();
         return view('agama.index',compact('data_agama'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    //menambahkan data agama
     public function store(FormAgamarequest $request)
     {
+        //
         $agama = Agama::create([
             'nama_agama' => $request->nama_agama,
             'status' => 1,

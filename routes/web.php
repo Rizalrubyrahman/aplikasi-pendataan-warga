@@ -39,14 +39,17 @@ Route::group(['middleware' => ['auth']], function () {
     //laporan
     //kartu kelauarga
     Route::get('/laporan/kartu-keluarga','LaporanController@kartuKeluarga');
+    //route cetak laporan pdf kartu keluarga
     Route::get('/laporan/kartu-keluarga/pdf','LaporanController@kartuKeluargaPdf');
 
     //agama
     Route::get('/laporan/agama','LaporanController@agama');
+    //route cetak laporan pdf agama
     Route::get('/laporan/agama/pdf','LaporanController@agamaPdf');
 
     //klasifikasi
     Route::get('/laporan/klasifikasi','LaporanController@klasifikasi');
+    //route cetak laporan pdf kartu keluarga
     Route::get('/laporan/klasifikasi/pdf','LaporanController@klasifikasiPdf');
 });
 
